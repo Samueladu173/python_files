@@ -1,0 +1,34 @@
+def getDefaultListOfDonorsAndTheirDonatedAmounts(): 
+    ListOfDonorsAndTheirDonatedAmount = ["4000:Kofi Agyei","2000:Ama Duncan","9000:Adu Samuel","6000:Deborah"]
+    return ListOfDonorsAndTheirDonatedAmount
+
+def getListPostSplit(itemName, separator):
+    freshList = itemName.split(separator)
+    return freshList
+
+def getAmountDonatedUsingNameOfDonor(InputedNameOfDonor):
+    ListOfDonorsAndTheirDonatedAmount=getDefaultListOfDonorsAndTheirDonatedAmounts()
+    print("ListOfDonorsAndTheirDonatedAmount :",ListOfDonorsAndTheirDonatedAmount)
+    AmountDonated_x = 0
+    Separator = ":"
+    #if(InputedNameOfDonor in ListOfDonorsAndTheirDonatedAmount):
+    print("InputedNameOfDonor : ",InputedNameOfDonor)
+    #we found the said entry in the list
+    for AmountDonatedAndnameOfDonor in ListOfDonorsAndTheirDonatedAmount:
+        print("AmountDonatedAndnameOfDonor : ", AmountDonatedAndnameOfDonor)
+        if( InputedNameOfDonor in AmountDonatedAndnameOfDonor):
+            print("Yes found! : ", InputedNameOfDonor)
+            print("The item found in is : ", AmountDonatedAndnameOfDonor)
+            listX = getListPostSplit(AmountDonatedAndnameOfDonor, Separator)
+            print("listX : ", listX)
+            AmountDonated=listX[0]
+            NameOfDonor=listX[1]
+            AmountDonated_x=AmountDonated
+    #else:
+        #sorry we did not find the name of donor
+        return AmountDonated_x
+
+
+#print("The amount for Kofi Agyei is ",getAmountDonatedUsingNameOfDonor("4000:Kofi Agyei"));
+
+print("The amount for Kofi Agyei is ",getAmountDonatedUsingNameOfDonor("Kofi Agyei"));
